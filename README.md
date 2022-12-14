@@ -2,12 +2,12 @@
 
 Dinosaurs and humans mixing. What can go wrong?
 
-# 
+# Dino Resort
 
 Welcome to another attempt at Jurassic hospitality.
 This year celebrate Cretaceous Christmas with our very own Santa Claws! 
-Join our book circle led by Raptor Hotel's English afficionado Emily Brontosaurus.
-Wether you want to live sparsely, lavishly or a bit in-between. We have a room for you! 
+Join our book circle led by Dino Resort's English afficionado Emily Brontosaurus.
+Wether you're traveling on a budget, small or big, or a bit in-between. We have a room for you! 
 
 # Instructions
 
