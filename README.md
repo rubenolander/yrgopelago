@@ -1,3 +1,5 @@
+![Dinosoar](https://media.giphy.com/media/l6O086UCmNZcc/giphy.gif)
+
 # Isla Rublar
 
 Dinosaurs and humans mixing. What can go wrong?
