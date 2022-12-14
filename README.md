@@ -1,16 +1,17 @@
-WHY NOT A GIF HERE? TO SET THE MODE.
+# Isla Rublar
 
-# Island name
+Dinosaurs and humans mixing. What can go wrong?
 
-Some text about your lovely island
+# 
 
-# Hotel name
-
-Why not add some info about the hotel of your dreams?
+Welcome to another attempt at Jurassic hospitality.
+This year celebrate Cretaceous Christmas with our very own Santa Claws! 
+Join our book circle led by Raptor Hotel's English afficionado Emily Brontosaurus.
+Wether you want to live sparsely, lavishly or a bit in-between. We have a room for you! 
 
 # Instructions
 
-If your project requires some installation or similar, please inform your user 'bout it. For instance, if you want a more decent indentation of your .php files, you could edit [.editorconfig]('/.editorconfig').
+To view this project. Visit the following link: https://ruebn.se/islarublar/ or download this repository and open the index.html file.
 
 # Code review
 
