@@ -8,8 +8,20 @@
 <title>Isla Rublar</title>
 </head>
 <body>
-    <h1>ChristmAssignment</h1>
-    <p>Dinosaurs and humans mixing. What can go wrong?
-    </p>
+  <form action="" method="post">
+      <label for="Room type">Choose your room:</label>
+      <select name="rooms">
+        <option value="pit">Pit</option>
+        <option value="standard">Standard</option>
+        <option value="penthouse">Penthouse</option>
+      </select>
+      <label for="arrivalDate">Arrival date:</label>
+      <input type="date" name="arrivalDate" min="2023-01-01" max="2023-01-31">
+      <label for="departureDate">Departure date:</label>
+      <input type="date" name="departureDate" min="2023-01-01" max="2023-01-31">
+      <label for="transferCode">Transfer code:</label>
+      <input type="text" name="transferCode" placeholder="Code here!">
+      <button type="submit">Book room</button>
+  </form>
 </body>
 </html>
