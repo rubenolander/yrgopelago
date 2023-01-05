@@ -1,3 +1,7 @@
+<?php
+require('form.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,11 +15,11 @@
 
 <body>
   <form action="index.php" method="post">
-    <label for="Room type">Choose your room:</label>
-    <select name="rooms">
-      <option value="pit">Pit</option>
-      <option value="standard">Standard</option>
-      <option value="penthouse">Penthouse</option>
+    <label for="roomtype">Choose your room:</label>
+    <select name="roomtype">
+      <option value="1">Pit</option>
+      <option value="2">Standard</option>
+      <option value="3">Penthouse</option>
     </select>
     <label for="arrivalDate">Arrival date:</label>
     <input type="date" name="arrivalDate" min="2023-01-01" max="2023-01-31">

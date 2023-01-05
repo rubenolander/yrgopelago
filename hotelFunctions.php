@@ -9,7 +9,7 @@ One function to connect to the database you want (it will return a PDO object wh
 one function to create a guid,
 and one function to control if a guid is valid.
 */
-
+$hotelDb = connect('hotel.db');
 function connect(string $dbName): object
 {
     $dbPath = __DIR__ . '/' . $dbName;
