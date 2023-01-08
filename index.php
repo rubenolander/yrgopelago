@@ -36,7 +36,7 @@ require 'vendor/autoload.php';
     <input type="date" name="departureDate" min="2023-01-01" max="2023-01-31" required>
     <label for="transferCode">Transfer code:</label>
     <input type="text" name="transferCode" placeholder="Code here!">
-    <button type="submit">Book room</button>
+    <button type="submit">Make reservation</button>
     <?php echo $message; ?>
   </form>
 </body>

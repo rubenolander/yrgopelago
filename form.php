@@ -1,7 +1,11 @@
 <?php
+
+declare(strict_types=1);
 require('hotelFunctions.php');
+require('functions.php');
 
 $message = "Please make your reservation above.";
+
 
 if (isset($_POST['roomtype'], $_POST['arrivalDate'], $_POST['departureDate'], $_POST['transferCode'])) {
     $roomType = $_POST['roomtype'];
@@ -10,12 +14,15 @@ if (isset($_POST['roomtype'], $_POST['arrivalDate'], $_POST['departureDate'], $_
     $transferCode = htmlspecialchars(trim($_POST['transferCode']));
     $numberOfNights = floor(strtotime($departureDate) / 86400) - floor(strtotime($arrivalDate) / 86400);
     //Got wrong number returned when I multiplied in the above row. Doing it in two steps instead.
-    $totalCost = $numberOfNights * $roomType;
+    $totalCost = $numberOfNights * getRoomPrice($roomType);
+    echo getRoomPrice($roomType);
     print_r($_POST);
     if ($arrivalDate >= $departureDate) {
         $message = "Your arrival needs to be at least a day before your departure.";
     } else {
-        $insertQuery = 'INSERT INTO bookings (room_id, arrival_date, departure_date, transfer_code, cost) VALUES (:roomtype, :arrivalDate, :departureDate, :transferCode, :cost)';
+        $insertQuery =
+            'INSERT INTO bookings (room_id, arrival_date, departure_date, transfer_code, cost) 
+            VALUES (:roomtype, :arrivalDate, :departureDate, :transferCode, :cost)';
         $statement = $hotelDb->prepare($insertQuery);
         $statement->bindParam(':roomtype', $roomType, PDO::PARAM_INT);
         $statement->bindParam(':arrivalDate', $arrivalDate, PDO::PARAM_STR);
