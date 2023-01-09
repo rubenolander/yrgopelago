@@ -24,6 +24,15 @@
           "video": "https://www.youtube.com/watch?v=5Ym-k30X5PY"
         }
       ]
-    }
+    },
+    {
+    "island":"Isla Rublar",
+    "hotel":"Dino Resort",
+    "arrival_date":"2023-01-02",
+    "departure_date":"2023-01-03",
+    "total_cost":"10",
+    "stars":"0",
+    "addtional_info":"At least I had some fun this Christmas."
+  }
   ]
 }

@@ -30,6 +30,8 @@ require 'vendor/autoload.php';
       <option value="2">Standard</option>
       <option value="3">Penthouse</option>
     </select>
+    <label for="user">Visitor name:</label>
+    <input type="text" name="user" placeholder="Your username" required>
     <label for="arrivalDate">Arrival date:</label>
     <input type="date" name="arrivalDate" min="2023-01-01" max="2023-01-31" required>
     <label for="departureDate">Departure date:</label>
@@ -37,8 +39,13 @@ require 'vendor/autoload.php';
     <label for="transferCode">Transfer code:</label>
     <input type="text" name="transferCode" placeholder="Code here!">
     <button type="submit">Make reservation</button>
-    <?php echo $message; ?>
+    <?= $message; ?>
   </form>
+
+  <section class="JSON">
+    <h2>JSON:</h2>
+    <p> <?= $bookingResponse ?> </p>
+  </section>
 </body>
 
 </html>

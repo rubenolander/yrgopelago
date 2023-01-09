@@ -6,10 +6,11 @@ require('functions.php');
 
 //Set message below submit button.
 $message = "Please make your reservation above.";
-
+$bookingResponse = "Your JSON will arrive here upon sucessful reservation.";
 //First check if all the form variables have been put in.
-if (isset($_POST['roomtype'], $_POST['arrivalDate'], $_POST['departureDate'], $_POST['transferCode'])) {
+if (isset($_POST['user'], $_POST['roomtype'], $_POST['arrivalDate'], $_POST['departureDate'], $_POST['transferCode'])) {
 
+    $visitorName = htmlspecialchars(trim($_POST['user']));
     $roomType = $_POST['roomtype'];
     $arrivalDate = $_POST['arrivalDate'];
     $departureDate = $_POST['departureDate'];
@@ -48,20 +49,21 @@ if (isset($_POST['roomtype'], $_POST['arrivalDate'], $_POST['departureDate'], $_
             $statement->bindParam(':cost', $totalCost, PDO::PARAM_INT);
             $statement->execute();
 
-            $message = "Thanks, we have recieved your reservation.";
+            $message = "Thanks $visitorName, we have recieved your reservation.";
+
+            $jsonResponse = [
+                "island" => "Isla Rublar",
+                "hotel" => "Dino Resort",
+                "arrival_date" => "$arrivalDate",
+                "departure_date" => "$departureDate",
+                "total_cost" => "$totalCost",
+                "stars" => "0",
+                "addtional_info" => "At least Ruben, the hotel owner, had a blast this Christmas."
+            ];
+            $bookingResponse = json_encode($jsonResponse);
         } else {
             $message = "Either the transfer code is invalid or you don't have enough money on it, please check again.";
         }
-
-        //JSON response with datan som behövs.
-        // island
-        // hotel
-        // arrival_date
-        // departure_date
-        // total_cost
-        // stars
-        // features
-        // additional_info. 
     } else {
         $message = "Sorry that room's already reserved during that time.";
     }
