@@ -63,3 +63,23 @@ function transferCodeCheck($transferCode, $totalCost): bool
         return true;
     }
 }
+
+function transferCodeDeposit($transferCode, $userName): bool
+{
+    $client = new GuzzleHttp\Client();
+
+    $response = [
+        'form_params' => [
+            'transferCode' => $transferCode,
+            'user' => $userName
+        ]
+    ];
+    $response = $client->post("https://www.yrgopelago.se/centralbank/deposit", $response);
+    $response = $response->getBody()->getContents();
+    $response = json_decode($response, true);
+    if (isset($response['error'])) {
+        return false;
+    } else {
+        return true;
+    }
+}
