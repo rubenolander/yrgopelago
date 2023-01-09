@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 // include('hotelFunctions.php');
+require 'vendor/autoload.php';
+
 function getRoomPrice(string $roomType): int
 {
     $hotelDb = connect('hotel.db');
@@ -16,6 +18,7 @@ function getRoomPrice(string $roomType): int
 function checkRoomAvailability(object $hotelDb, string $roomType, string $arrivalDate, string $departureDate)
 {
     $hotelDb = connect('hotel.db');
+
     $dateQuery = 'SELECT * FROM bookings 
     WHERE 
     room_id = :roomtype
@@ -32,4 +35,31 @@ function checkRoomAvailability(object $hotelDb, string $roomType, string $arriva
     $statement->execute();
     $bookings = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $bookings;
+}
+
+//GUZZLE transfercode block
+
+
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
+
+function transferCodeCheck($transferCode, $totalCost): bool
+{
+    $client = new GuzzleHttp\Client();
+
+    $response = [
+        'form_params' => [
+            'transferCode' => $transferCode,
+            'totalcost' => $totalCost
+        ]
+    ];
+
+    $response = $client->post("https://www.yrgopelago.se/centralbank/transferCode", $response);
+    $response = $response->getBody()->getContents();
+    $response = json_decode($response, true);
+    if (isset($response['error'])) {
+        return false;
+    } else {
+        return true;
+    }
 }
