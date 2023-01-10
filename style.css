@@ -1,3 +1,9 @@
+main{
+    display: flex !important;
+    justify-content: space-evenly !important;
+    flex-direction: row;
+}
+
 form {
     display: flex;
     flex-direction: column;

@@ -3,6 +3,8 @@
 declare(strict_types=1);
 require_once('hotelFunctions.php');
 require('functions.php');
+require('calendar.php');
+
 
 //Set message below submit button.
 $message = "Please make your reservation above.";

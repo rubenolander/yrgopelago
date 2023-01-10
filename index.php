@@ -1,5 +1,6 @@
 <?php
 require('form.php');
+include('calendar.php');
 require 'vendor/autoload.php';
 ?>
 
@@ -16,13 +17,25 @@ require 'vendor/autoload.php';
 </head>
 
 <body>
-  <h1> Welcome to Dino Resort on Isla Rublar</h1>
+  <h1> Welcome to Dino Resort on Isla Rublar!</h1>
   <h2> Info about our rooms below:</h2>
-  <section>
-    <h2></h2>
-  </section>
-  <section></section>
-  <section></section>
+
+  <Main>
+    <section>
+      <h2>Pit</h2>
+      <?= $pitCalendar->draw(date('2023-01-01')); ?>
+    </section>
+    <section>
+      <h2>Standard</h2>
+      <?= $standardCalendar->draw(date('2023-01-01')); ?>
+
+    </section>
+    <section>
+      <h2>Penthouse</h2>
+      <?= $penthouseCalendar->draw(date('2023-01-01')); ?>
+
+    </section>
+  </Main>
   <form action="index.php" method="post">
     <label for="roomtype">Choose your room:</label>
     <select name="roomtype">
