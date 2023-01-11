@@ -12,7 +12,7 @@ require('vendor/autoload.php');
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="style/pic/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="/style/style.css">
+  <link rel="stylesheet" href="style/style.css">
   <title>Isla Rublar - YRGOpelago</title>
 </head>
 
@@ -88,20 +88,7 @@ require('vendor/autoload.php');
     <p class="JSONfield"><?= $bookingResponse ?></p>
   </section>
 
-  <script>
-    const JSONcopyButton = document.querySelector('.copyButton');
-    const JSONfield = document.querySelector('.JSONfield');
-
-    //I don't need two blocks for this but it's late o' clock and I need to style.
-    JSONcopyButton.addEventListener('click', () => {
-      copyJSON();
-    });
-
-    function copyJSON() {
-      navigator.clipboard.writeText(JSONfield.innerHTML);
-      alert("JSON-string copied to clipboard!");
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 
 </html>
