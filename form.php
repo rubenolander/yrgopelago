@@ -59,9 +59,10 @@ if (isset($_POST['user'], $_POST['roomtype'], $_POST['arrivalDate'], $_POST['dep
                 "arrival_date" => "$arrivalDate",
                 "departure_date" => "$departureDate",
                 "total_cost" => "$totalCost",
-                "stars" => "0",
+                "stars" => "1",
                 "addtional_info" => "At least Ruben, the hotel owner, had a blast this Christmas."
             ];
+
             $bookingResponse = json_encode($jsonResponse);
         } else {
             $message = "Either the transfer code is invalid or you don't have enough money on it, please check again.";

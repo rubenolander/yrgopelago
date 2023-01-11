@@ -12,4 +12,5 @@ $standardCalendar->useMondayStartingDate();
 $penthouseCalendar = new Calendar;
 $penthouseCalendar->useMondayStartingDate();
 
+//Only need to activate stylesheet on one calendar apparently.
 $pitCalendar->stylesheet();

@@ -1,7 +1,7 @@
 <?php
 require('form.php');
 include('calendar.php');
-require 'vendor/autoload.php';
+require('vendor/autoload.php');
 ?>
 
 <!DOCTYPE html>
@@ -23,16 +23,16 @@ require 'vendor/autoload.php';
   <Main>
     <section>
       <h2>Pit</h2>
-      <?= $pitCalendar->draw(date('2023-01-01')); ?>
+      <?= outputCalendar(1, $pitCalendar); ?>
     </section>
     <section>
       <h2>Standard</h2>
-      <?= $standardCalendar->draw(date('2023-01-01')); ?>
+      <?= outputCalendar(2, $standardCalendar); ?>
 
     </section>
     <section>
       <h2>Penthouse</h2>
-      <?= $penthouseCalendar->draw(date('2023-01-01')); ?>
+      <?= outputCalendar(3, $penthouseCalendar); ?>
 
     </section>
   </Main>
