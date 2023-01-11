@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'JurassicPark';
+    src: url(fonts/JurassicPark.woff);
+    src: url(fonts/JurassicPark.woff2);
+}
+
+h1 {
+    font-family: 'JurassicPark';
+    text-align: center;
+}
+
+main{
+    display: flex;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+}
