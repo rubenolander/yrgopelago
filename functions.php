@@ -4,35 +4,6 @@ declare(strict_types=1);
 // include('hotelFunctions.php');
 require('vendor/autoload.php');
 
-//Block for filling calendar dates.
-function fetchBookings(int $roomType)
-{
-    $hotelDb = connect('hotel.db');
-    $roomQuery = 'SELECT * from bookings WHERE id = :roomtype';
-    $stmt = $hotelDb->prepare($roomQuery);
-    $stmt->bindParam(':roomtype', $roomType, PDO::PARAM_INT);
-    $stmt->execute();
-    $bookings = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    return $bookings;
-}
-
-function outputCalendar(int $roomType, object $calendar)
-{
-    foreach (fetchBookings($roomType) as $booking) {
-
-        $calendar->addEvent(
-            $booking['arrival_date'],
-            $booking['departure_date'],
-            "",
-            true,
-
-        );
-    }
-    echo $calendar->draw(date('2023-01-01'));
-}
-
-// FORM
-//Block for checking if if room is available and what it costs.
 function getRoomPrice(string $roomType): int
 {
     $hotelDb = connect('hotel.db');
@@ -67,6 +38,32 @@ function checkRoomAvailability(object $hotelDb, string $roomType, string $arriva
     return $bookings;
 }
 
+// Block for filling calendar dates.
+function fetchBookings($roomType)
+{
+    $hotelDb = connect('hotel.db');
+    $roomQuery = 'SELECT * from bookings WHERE room_id = :roomtype';
+    $stmt = $hotelDb->prepare($roomQuery);
+    $stmt->bindParam(':roomtype', $roomType, PDO::PARAM_INT);
+    $stmt->execute();
+    $bookings = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $bookings;
+}
+
+function outputCalendar($roomType, $calendar)
+{
+    foreach (fetchBookings($roomType) as $booking) {
+
+        $calendar->addEvent(
+            $booking['arrival_date'],
+            $booking['departure_date'],
+            "",
+            true,
+
+        );
+    }
+    echo $calendar->draw(date('2023-01-01'));
+}
 
 //GUZZLE transfercode block, one for checking viability and one for depositing into central bank.
 use GuzzleHttp\Client;

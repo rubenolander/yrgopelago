@@ -4,15 +4,15 @@ include('calendar.php');
 require('vendor/autoload.php');
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
+  <!DOCTYPE html>
+  <html lang="en">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="style/pic/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="/style/style.css">
   <title>Isla Rublar - YRGOpelago</title>
 </head>
 
@@ -84,20 +84,22 @@ require('vendor/autoload.php');
 
   <h2>JSON:</h2>
   <section class="JSON">
-    <button class="copyButton">Copy JSON-string to clip board</button>
-    <input class="JSONfield" value="<?= $bookingResponse ?>" readonly>
+    <button class="copyButton" data-value="trend">Copy JSON-string to clipboard</button>
+    <p class="JSONfield"><?= $bookingResponse ?></p>
   </section>
 
   <script>
     const JSONcopyButton = document.querySelector('.copyButton');
     const JSONfield = document.querySelector('.JSONfield');
+
+    //I don't need two blocks for this but it's late o' clock and I need to style.
     JSONcopyButton.addEventListener('click', () => {
       copyJSON();
     });
 
     function copyJSON() {
-      JSONfield.select();
-      navigator.clipboard.writeText(JSONfield.value);
+      navigator.clipboard.writeText(JSONfield.innerHTML);
+      alert("JSON-string copied to clipboard!");
     }
   </script>
 </body>
