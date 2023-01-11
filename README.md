@@ -13,7 +13,8 @@ Wether you're traveling on a budget, small or big, or a bit in-between. We have 
 
 # Instructions
 
-To view this project. Visit the following link: https://ruebn.se/islarublar/ or download this repository and open the index.html file.
+To view this project. Visit the following link: https://ruebn.se/islarublar/
+Please note the page is an assignment for learning web developers at YRGO.
 
 # Code review
 
