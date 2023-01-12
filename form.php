@@ -8,7 +8,7 @@ require('calendar.php');
 
 //Set message below submit button.
 $message = "Please make your reservation above.";
-$bookingResponse = "Your JSON will arrive here upon sucessful reservation.";
+$bookingResponse = "Your JSON will arrive here upon successful reservation.";
 //First check if all the form variables have been put in.
 if (isset($_POST['user'], $_POST['roomtype'], $_POST['arrivalDate'], $_POST['departureDate'], $_POST['transferCode'])) {
 
@@ -51,7 +51,7 @@ if (isset($_POST['user'], $_POST['roomtype'], $_POST['arrivalDate'], $_POST['dep
             $statement->bindParam(':cost', $totalCost, PDO::PARAM_INT);
             $statement->execute();
 
-            $message = "Thanks $visitorName, we have recieved your reservation.";
+            $message = "Thanks $visitorName, we have received your reservation.";
 
             $jsonResponse = [
                 "island" => "Isla Rublar",
@@ -61,7 +61,7 @@ if (isset($_POST['user'], $_POST['roomtype'], $_POST['arrivalDate'], $_POST['dep
                 "total_cost" => "$totalCost",
                 "features" => [],
                 "stars" => "1",
-                "addtional_info" => "At least Ruben, the hotel owner, had a blast this Christmas."
+                "additional_info" => "At least Ruben, the hotel owner, had a blast this Christmas."
             ];
 
             $bookingResponse = json_encode($jsonResponse);
