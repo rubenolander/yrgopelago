@@ -59,6 +59,7 @@ if (isset($_POST['user'], $_POST['roomtype'], $_POST['arrivalDate'], $_POST['dep
                 "arrival_date" => "$arrivalDate",
                 "departure_date" => "$departureDate",
                 "total_cost" => "$totalCost",
+                "features" => [],
                 "stars" => "1",
                 "addtional_info" => "At least Ruben, the hotel owner, had a blast this Christmas."
             ];
