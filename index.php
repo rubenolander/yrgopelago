@@ -18,9 +18,11 @@ require('vendor/autoload.php');
 
 <body>
   <header>
-    <h1> Welcome to Dino Resort on Isla Rublar!</h1>
-    <i>Yeah this idea has been tried before but this time it'll work out, promise!</i>
-    <h2> Our rooms:</h2>
+    <div class="header-container">
+      <h1> Welcome to Dino Resort on Isla Rublar!</h1>
+      <i>Yeah this idea has been tried before but this time it'll work out, promise!</i>
+    </div>
+    <!-- <h2> Our rooms:</h2> -->
   </header>
 
   <Main>
@@ -78,13 +80,13 @@ require('vendor/autoload.php');
       <input type="text" name="transferCode" placeholder="Code here!">
 
       <button type="submit">Make reservation</button>
-      <?= $message; ?>
+      <p><?= $message; ?></p>
     </form>
   </div>
 
   <h2>JSON:</h2>
   <section class="JSON">
-    <button class="copyButton" data-value="trend">Copy JSON-string to clipboard</button>
+    <!-- <button onclick="copyJSON()" class="copyButton" data-value="trend">Copy JSON-string to clipboard</button> -->
     <p class="JSONfield"><?= $bookingResponse ?></p>
   </section>
 
