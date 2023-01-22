@@ -41,7 +41,7 @@ if (isset($_POST['user'], $_POST['roomtype'], $_POST['arrivalDate'], $_POST['dep
             transferCodeDeposit($transferCode, "Ruben");
 
             $insertQuery =
-                'INSERT INTO bookings (room_id, arrival_date, departure_date, transfer_code, cost) 
+                'INSERT INTO bookings (room_id, arrival_date, departure_date, transfer_code, cost)
                 VALUES (:roomtype, :arrivalDate, :departureDate, :transferCode, :cost)';
             $statement = $hotelDb->prepare($insertQuery);
             $statement->bindParam(':roomtype', $roomType, PDO::PARAM_INT);
