@@ -20,13 +20,13 @@ function checkRoomAvailability(object $hotelDb, string $roomType, string $arriva
 {
     $hotelDb = connect('hotel.db');
 
-    $dateQuery = 'SELECT * FROM bookings 
-    WHERE 
+    $dateQuery = 'SELECT * FROM bookings
+    WHERE
     room_id = :roomtype
-    AND 
-    (arrival_date <= :arrivalDate 
+    AND
+    (arrival_date <= :arrivalDate
     or arrival_date < :departureDate )
-    AND 
+    AND
     (departure_date > :arrivalDate or
     departure_date >:departureDate)';
     $statement = $hotelDb->prepare($dateQuery);
